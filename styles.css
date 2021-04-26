@@ -1,0 +1,145 @@
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.ms-color-sharedCyanBlue20 {
+  color: #004e8c;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.noContent {
+  display: none;
+}
+
+#colleagues li {
+  cursor: pointer;
+  padding: 14px;
+}
+
+#colleagues li:hover, #colleagues li.selected {
+  box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 13%), 0 0.6px 1.8px 0 rgb(0 0 0 / 11%)
+}
+
+#colleagues li.selected {
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+#emails li {
+  margin: 0 10px 14px 0;
+  padding: 14px;
+}
+.date {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.time {
+  display: inline;
+  font-size: 12px;
+}
+
+.location {
+  font-size: 12px;
+}
+.location a{
+
+  text-decoration: none;
+}
+
+.details {
+  margin: 5px 10px 20px 10px;
+  font-size: 18px;
+  min-width: 180px;
+  padding: 10px 5px;
+}
+.online-meeting {
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.online-meeting-icon {
+  max-width: 16px;
+  vertical-align: middle;
+}
+
+.online-meeting-link {
+  text-decoration: none;
+  color: #3063b2;
+}
+
+.attendees {
+  margin-top: 8px;
+}
+
+.attendee {
+  display: inline-block;
+}
+
+
+.subject{
+  font-size: 14px;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  border-radius: 0px;
+  text-align: center;
+  padding: 0;
+  background-color: #284c79;
+  color: rgb(136, 172, 217);
+  margin: -8px -8px 0 -8px;
+}
+
+.about{ margin-top:15px;}
+
+.card .header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+
+.card mgt-person {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+  --avatar-size: 100px;
+  --avatar-border: 5px solid rgba(237, 237, 237, 0.6);
+  --avatar-border-radius: 50%;
+}
+
+.attendee{
+  padding-right:2px;
+}
+.attendee img{
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#profile table {
+  border-collapse: collapse;
+}
+
+#profile td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 3pt 6pt;
+}
+
+.map {
+  max-width: 100%;
+}
