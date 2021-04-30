@@ -30,7 +30,7 @@ export async function getProfile() {
 }
 
 export async function getUserProfile(userId) {
-  const userQueryPart = userId ? `/users/${selectedUserId}` : '/me';
+  const userQueryPart = userId ? `/users/${userId}` : '/me';
 
   const profile = await graphClient
     .api(`${userQueryPart}`)
