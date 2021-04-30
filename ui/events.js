@@ -9,10 +9,10 @@ export async function loadMeetings() {
 
     const selectedUserId = getSelectedUserId();
     if (!selectedUserId) {
-        document.querySelector('#events h2').innerHTML = 'Your upcoming meetings next week';
+        document.querySelector('#events h2').innerHTML = 'Upcoming watch parties';
     } else {
         let selectedUser = await getUser(selectedUserId);
-        document.querySelector('#events h2').innerHTML = `Your upcoming meetings next week with ${selectedUser.displayName}`;
+        document.querySelector('#events h2').innerHTML = `Upcoming watch parties`;
     }
 
     const myMeetings = await getMyUpcomingMeetings(selectedUserId);

@@ -1,8 +1,9 @@
-import { loadUnreadEmails } from './ui/email.js';
+
 import { loadProfile } from './ui/profile.js';
 import { loadColleagues } from './ui/colleagues.js';
 import { loadMeetings } from './ui/events.js';
-import { loadTrendingFiles } from './ui/files.js';
+import { loadGames } from './ui/games.js';
+
 
 import { getUser, getUserPhoto } from './graph/user.js';
 import { signIn, silentSignIn } from './auth.js';
@@ -49,9 +50,9 @@ async function displayUI(auto) {
 
 export async function loadData() {
     await Promise.all([
-        loadUnreadEmails(),
+        
+        loadGames(),
         loadMeetings(),
-        loadTrendingFiles(),
         loadProfile()
     ]);
 }

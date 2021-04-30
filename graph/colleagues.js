@@ -4,21 +4,11 @@ import { getAccount } from '../auth.js';
 import { getUserPhoto } from './user.js';
 
 export async function getMyColleagues() {
-  // get my manager
-  var manager;
-  try {
-    manager = await graphClient
-      .api('/me/manager')
-      .select('id')
-      .get();
-  }
-  catch {
-    throw 'Manager not found';
-  }
+
 
   // get my colleagues
   const colleagues = await graphClient
-    .api(`/users/${manager.id}/directReports`)
+    .api(`groups/f80f9131-e52d-4402-91e3-d558cf1f393a/members`)
     .select('id,displayName,jobTitle,department,city,state,country')
     .get();
 
