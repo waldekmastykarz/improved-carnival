@@ -4,8 +4,6 @@ import { getAccount } from '../auth.js';
 import { getUserPhoto } from './user.js';
 
 export async function getMyColleagues() {
-
-
   // get my colleagues
   const colleagues = await graphClient
     .api(`groups/f80f9131-e52d-4402-91e3-d558cf1f393a/members`)

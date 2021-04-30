@@ -89,13 +89,12 @@ ul {
 .card {
   overflow: hidden;
   position: relative;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  border-radius: 0px;
   text-align: center;
   padding: 0;
   background-color: #dc482e;
   color: #10296d;
   margin: -8px -8px 0 -8px;
+  border-bottom: 5px solid #10296d;
 }
 
 .about{ margin-top:15px;}
@@ -119,8 +118,8 @@ ul {
   --avatar-border-radius: 50%;
 }
 
-.buttons {
-  background-color: #ac6faa;
+.button {
+  background-color: #dc482e;
   border: none;
   color: #10296d;
   padding: 15px 32px;
@@ -128,21 +127,22 @@ ul {
   text-decoration: none;
   display: block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 1em 0;
   cursor: pointer;
   box-shadow: 5px 10px;
   font-weight: bold;
-  width: 100%;
-  margin: 10px;
-  position: relative;
-  left: 50%;
+  text-transform: uppercase;
 }
 
-
+.button:disabled {
+  background-color: #aaa;
+  color: #555;
+}
 
 .attendee{
   padding-right:2px;
 }
+
 .attendee img{
   width: 30px;
   height: 30px;
@@ -163,4 +163,8 @@ ul {
 
 .map {
   max-width: 100%;
+}
+
+h2 {
+  color: #10296D;
 }

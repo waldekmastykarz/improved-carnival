@@ -22,24 +22,20 @@
         <h1><span id="userName"></span></h1>
         <p id="myJob"></p>
       </div>
-     
-    </div>
-    <div class="ms-Grid">
-      <div class="ms-Grid-row">
-        <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg4">
-        <button class="buttons">FIND MY BUDDY!</button>
-        </div>
-        <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg4">
-        <button class="buttons">ORGANIZE A WATCH PARTY 📺</button>
-        </div>
-    </div>
-    </div> 
-   
+    </div>  
 
     <div class="ms-Grid">
       <div class="ms-Grid-row">
         <!-- Column 1-->
         <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg4">
+          <div id="buddy">
+            <h2>Your buddy</h2>
+            <div class="loading">Loading your buddy info...</div>
+            <div class="noContent">
+              <p>You've got no buddy yet!</p>
+              <button class="button">Quick, find me a buddy!</button>
+            </div>
+          </div>
 
           <!-- Colleagues -->
           <div id="colleagues">
@@ -92,6 +88,7 @@
             <h2>Upcoming watch parties</h2>
             <div class="loading">Loading upcoming watch parties...</div>
             <div class="noContent">It's quiet here 🔕</div>
+            <button class="button">ORGANIZE A WATCH PARTY 📺</button>
             <mgt-agenda group-by-day>
               <template data-type="event">
                 <div class="details ms-depth-8">
