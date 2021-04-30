@@ -93,8 +93,8 @@ ul {
   border-radius: 0px;
   text-align: center;
   padding: 0;
-  background-color: #284c79;
-  color: rgb(136, 172, 217);
+  background-color: #dc482e;
+  color: #10296d;
   margin: -8px -8px 0 -8px;
 }
 
@@ -118,6 +118,27 @@ ul {
   --avatar-border: 5px solid rgba(237, 237, 237, 0.6);
   --avatar-border-radius: 50%;
 }
+
+.buttons {
+  background-color: #ac6faa;
+  border: none;
+  color: #10296d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 5px 10px;
+  font-weight: bold;
+  width: 100%;
+  margin: 10px;
+  position: relative;
+  left: 50%;
+}
+
+
 
 .attendee{
   padding-right:2px;
