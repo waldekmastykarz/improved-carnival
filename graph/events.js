@@ -10,7 +10,7 @@ export async function getMyUpcomingMeetings(selectedUserId) {
   const query = `startDateTime=${dateNow.toISOString()}&endDateTime=${dateNextWeek.toISOString()}`;
   var meetings = [];
   const response = await graphClient
-    .api(`/me/events?$filter=categories/any(a:a+eq+'Red+Category')`)
+    .api(`/groups/15e4817c-1662-426f-a1c3-0a275424b851/events?$filter=categories/any(a:a+eq+'Red+Category')`)
     .query(query)
     .orderby(`start/DateTime`)
     .get();
