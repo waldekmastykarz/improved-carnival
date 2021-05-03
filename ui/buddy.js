@@ -32,7 +32,7 @@ function showBuddy(buddy, buddySection, loading, button) {
 
   const mgtPerson = document.createElement('mgt-person');
   mgtPerson.personDetails = buddy;
-  mgtPerson.view = mgt.ViewType.threelines;
+  mgtPerson.view = mgt.PersonViewType.threelines;
   buddySection.appendChild(mgtPerson);
 }
 

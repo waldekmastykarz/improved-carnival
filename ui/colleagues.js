@@ -12,7 +12,7 @@ export async function loadColleagues() {
     mgtPerson.personDetails = person;
     // mgtPerson.line2Property = 'jobTitleAndDepartment';
     // mgtPerson.line3Property = 'localTime';
-    mgtPerson.view = mgt.ViewType.threelines;
+    mgtPerson.view = mgt.PersonViewType.threelines;
 
     colleagueLi.append(mgtPerson);
     colleaguesList.append(colleagueLi);
