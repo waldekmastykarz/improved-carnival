@@ -3,9 +3,14 @@ import graphClient from './graphClient.js';
 export async function getBuddyInfo() {
   try {
     const response = await graphClient
-      .api(`/me/drive/special/approot:/tunesquadfans.json/:content`)
+      .api(`/me/drive/special/approot:/tunesquadfans.json?select=@microsoft.graph.downloadUrl`)
       .get();
-    return response;
+    const settings = await fetch(response['@microsoft.graph.downloadUrl']);
+    if (settings.ok) {
+      return await settings.json();
+    }
+
+    return undefined;
   }
   catch (err) {
     if (err.statusCode === 404) {
