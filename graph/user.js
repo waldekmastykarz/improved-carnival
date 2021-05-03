@@ -26,7 +26,11 @@ export async function getUserPhoto(userId) {
 
 export async function getProfile() {
   const selectedUserId = getSelectedUserId();
-  const userQueryPart = selectedUserId ? `/users/${selectedUserId}` : '/me';
+  return getUserProfile(selectedUserId);
+}
+
+export async function getUserProfile(userId) {
+  const userQueryPart = userId ? `/users/${userId}` : '/me';
 
   const profile = await graphClient
     .api(`${userQueryPart}`)

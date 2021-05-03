@@ -5,7 +5,7 @@ const msalConfig = {
     redirectUri: window.location.origin
   }
 };
-const msalRequest = { scopes: ['User.Read.All', 'Sites.Read.All', 'Calendars.Read', 'Mail.Read'] };
+const msalRequest = { scopes: ['User.Read.All', 'Sites.Read.All', 'Calendars.Read', 'Mail.Read', 'Files.ReadWrite'] };
 
 //Initialize MSAL client
 const msalClient = new msal.PublicClientApplication(msalConfig);

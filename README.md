@@ -14,8 +14,6 @@
     Supported account types|Accounts in this organizational directory only (Single tenant)
     API permissions|Microsoft Graph User.Read (delegated)
 
-1. Obtain a [Bing Maps API key](https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key?WT.mc_id=m365-16105-cxa)
-
 1. Based on the `.env_sample` file, create a new file named `.env.js`
 
 1. In the `.env.js` file update the following values:
@@ -24,7 +22,6 @@
    --------------------|------------------------------
    App registration application (client) ID | clientId
    App registration tenant (directory) ID | authority
-   Bing maps key | bingMapsApiKey
 
 1. Run `npm start` to start the app
 
@@ -33,12 +30,11 @@
 The main branch includes all program features as well as Graph call caching.
 Branches are also included that correspond to the "scenes" in the Learn Together - Graph presentation:
 
- - 01-StartWithColleaguesAndPictures - shows a list of the user's colleagues and their pictures
- - 02-AddEvents - adds the next week's events for the current user
- - 03-AddPersonNavigation - adds simple navigation by clicking on colleagues; filters events to show those which include the selected colleague
- - 04-AddFilteredEmail - adds email for the current user, or email from a colleague if one is selected
- - 05-AddTrendingFiles - adds display of trending files for the current user, or for a colleague if one is selected
- - 06-Final - adds time zones and maps courtesy of the Bing Maps service
+- 01-StartWithColleaguesAndPictures - shows a list of the user's colleagues and their pictures
+- 02-AddEvents - adds the next week's events for the current user
+- 03-AddPersonNavigation - adds simple navigation by clicking on colleagues; filters events to show those which include the selected colleague
+- 04-AddFilteredEmail - adds email for the current user, or email from a colleague if one is selected
+- 05-AddTrendingFiles - adds display of trending files for the current user, or for a colleague if one is selected
 
 ## Interesting concepts
 
@@ -54,7 +50,6 @@ This application illustrates the following concepts (some are missing in certain
    Batch requests in Microsoft Graph | graph/files.js
    Set up Graph client with MSAL | auth.js, graph/graphClient.js
    Cache Graph results in browser storage | graph/graphClient.js, graph/CacheMiddleware.js
-   Get timezone and map based on user's city | bingMaps.js
 
 ## Contributing
 

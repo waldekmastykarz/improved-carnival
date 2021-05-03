@@ -25,10 +25,6 @@ export function selectPerson(personElement, personId) {
     personElement = document.querySelector(`#colleagues li[data-personid="${personId}"]`);
   }
 
-  const allColleaguesMapElement = document.querySelector('#allColleaguesMap');
-  if (allColleaguesMapElement) {
-    allColleaguesMapElement.style = personElement ? "display:none" : "display:inline";
-  }
   if (personElement) {
     personElement.className += 'selected';
 
@@ -43,7 +39,7 @@ export function selectPerson(personElement, personId) {
 }
 
 export async function loadColleagues() {
-  const { myColleagues, mapUrl } = await getMyColleagues();
+  const { myColleagues } = await getMyColleagues();
   document.querySelector('#colleagues .loading').style = 'display: none';
 
   const colleaguesList = document.querySelector('#colleagues ul');
@@ -55,8 +51,8 @@ export async function loadColleagues() {
 
     const mgtPerson = document.createElement('mgt-person');
     mgtPerson.personDetails = person;
-    mgtPerson.line2Property = 'jobTitleAndDepartment';
-    mgtPerson.line3Property = 'localTime';
+    // mgtPerson.line2Property = 'jobTitleAndDepartment';
+    // mgtPerson.line3Property = 'localTime';
     mgtPerson.view = mgt.ViewType.threelines;
 
     colleagueLi.append(mgtPerson);
@@ -71,15 +67,4 @@ export async function loadColleagues() {
       selectPerson(undefined, selectedUserId);
     }, 1);
   }
-
-  const mapLi = document.createElement('li');
-  mapLi.setAttribute("id", "allColleaguesMap");
-  mapLi.style = selectedUserId ? "display:none" : "display:inline";
-  const mapImage = document.createElement('img');
-  mapImage.setAttribute("src", mapUrl);
-  mapImage.setAttribute("class", "map");
-  mapLi.append(mapImage);
-  colleaguesList.append(mapLi);
-
 }
-
