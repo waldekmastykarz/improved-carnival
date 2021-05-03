@@ -3,9 +3,9 @@ import graphClient from './graphClient.js';
 export async function getBuddyInfo() {
   try {
     const response = await graphClient
-      .api(`/me/drive/special/approot:/tunesquadfans.json`)
+      .api(`/me/drive/special/approot:/tunesquadfans.json/:content`)
       .get();
-    console.log(response);
+    return response;
   }
   catch (err) {
     if (err.statusCode === 404) {

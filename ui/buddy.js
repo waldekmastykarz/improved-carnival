@@ -4,6 +4,7 @@ import { getUserProfile } from '../graph/user.js';
 
 export async function loadBuddy() {
   const buddyInfo = await getBuddyInfo();
+  console.log(buddyInfo);
   if (!buddyInfo) {
     const buddySection = document.getElementById('buddy');
     buddySection.querySelector('.loading').style = 'display: none';
@@ -35,6 +36,14 @@ export async function findBuddy() {
 
   const buddy = fansInMyLocation[Math.floor(Math.random() * numFans)];
   await saveBuddyInfo(buddy);
-  
+
+  const mgtPerson = document.createElement('mgt-person');
+  mgtPerson.personDetails = buddy;
+  mgtPerson.view = mgt.ViewType.threelines;
+
+  loading.style = 'display: none';
+  button.style = 'display: none';
+  buddySection.appendChild(mgtPerson);
+
   return false;
 }

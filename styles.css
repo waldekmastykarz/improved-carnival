@@ -16,6 +16,10 @@ ul {
   display: none;
 }
 
+#colleagues {
+  margin-top: 2.5em;
+}
+
 #colleagues li {
   cursor: pointer;
   padding: 14px;
