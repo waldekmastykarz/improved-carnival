@@ -28,6 +28,12 @@ middleware.unshift(new CacheMiddleware([
   {
     path: '/calendarView',
     expirationInMinutes: 0
+  },
+  // exclude app settings file, because the returned download URL is
+  // different each time
+  {
+    path: 'drive/special/approot:/',
+    expirationInMinutes: 0
   }
 ]));
 
