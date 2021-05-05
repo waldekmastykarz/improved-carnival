@@ -108,8 +108,8 @@ ul {
   --avatar-border-radius: 50%;
 }
 
-.button {
-  background-color: #dc482e;
+.button,.createButton, .cancelButton {
+  background-color: #ac6faa;
   border: none;
   color: #10296d;
   padding: 15px 32px;
@@ -122,12 +122,15 @@ ul {
   box-shadow: 5px 10px;
   font-weight: bold;
   text-transform: uppercase;
+
 }
+
 
 .button:disabled {
   background-color: #aaa;
   color: #555;
 }
+
 
 .attendee{
   padding-right:2px;
@@ -154,3 +157,32 @@ ul {
 h2 {
   color: #10296D;
 }
+
+label{
+  color: #10296D;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.input {
+ width: 100%;
+ height: max-content;
+ margin-bottom: 10px;
+ border-bottom: 3px solid #10296D;
+ border-left: transparent;
+ border-right: transparent;
+ border-top: transparent;
+ outline: none;
+ background-color: transparent;
+ padding: 20px, 2px;
+ 
+}
+
+.input:focus{
+  border-bottom: 3px solid #ac6faa;
+  
+}
+
