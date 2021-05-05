@@ -1,10 +1,9 @@
-
 import { loadProfile } from './ui/profile.js';
 import { loadColleagues } from './ui/colleagues.js';
 import { loadMeetings } from './ui/events.js';
 import { loadGames } from './ui/games.js';
 import { loadBuddy } from './ui/buddy.js';
-
+import { loadWatchPartyForm } from './ui/newWatchParty.js';
 import { getUser, getUserPhoto } from './graph/user.js';
 import { signIn, silentSignIn } from './auth.js';
 
@@ -42,6 +41,7 @@ async function displayUI(auto) {
     var content = document.getElementById('content');
     content.style = "display: block";
 
+ 
     await Promise.all([
         loadColleagues(),
         loadData()
@@ -53,7 +53,8 @@ export async function loadData() {
         loadBuddy(),
         loadGames(),
         loadMeetings(),
-        loadProfile()
+        loadProfile(),
+        loadWatchPartyForm()
     ]);
 }
 

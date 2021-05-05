@@ -84,11 +84,55 @@
         </div>
        
         <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg4">
+          <div id="newWatchParty">
+            <button class="button">ORGANIZE A WATCH PARTY 📺</button>
+            <div class="ms-Grid ">
+              <h2>Let's create a watch party!🎉</h2>
+              <div class="ms-Grid-row eventForm">
+                <div class="ms-Grid-col ms-sm6 ms-md10 ms-lg10">
+                  <label>Subject</label>
+                  <input id="ev-subject" class="input" type="text"></input>
+                  <label>Attendees</label>
+                  <input id="ev-attendees" class="input" type="text"></input>
+                  <div class="ms-Grid">
+                    <div class="ms-Grid-row">
+                      <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
+                       <label>Start</label>
+                      </div>
+                      <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
+                        <label>End</label>
+                      </div>
+                    </div>
+                    <div class="ms-Grid-row">
+                      <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
+                        <input id="ev-start" class="input" type="datetime-local"></input>
+                      </div>
+                      <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
+                        <input id="ev-end" class="input" type="datetime-local"></input>
+                      </div>
+                    </div>
+                  </div>
+                  <label>Body</label>
+                  <textarea id="ev-body" class="input" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-sm12 ms-md4 ms-lg4">
+                  <button class="createButton">Create</button>
+                </div>
+                <div class="ms-Grid-col ms-sm12 ms-md8 ms-lg4">
+                  <button class="cancelButton">Cancel</button>
+                </div>
+              </div>
+          </div>
+          
           <div id="events">
-            <h2>Upcoming watch parties</h2>
+            
             <div class="loading">Loading upcoming watch parties...</div>
             <div class="noContent">It's quiet here 🔕</div>
-            <button class="button">ORGANIZE A WATCH PARTY 📺</button>
+           
+            
+            <h2>Upcoming watch parties</h2>
             <mgt-agenda group-by-day>
               <template data-type="event">
                 <div class="details ms-depth-8">
