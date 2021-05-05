@@ -6,7 +6,7 @@ export async function getMyColleagues() {
   // get my colleagues
   const colleagues = await graphClient
     .api(`groups/f80f9131-e52d-4402-91e3-d558cf1f393a/members`)
-    .select('id,displayName,jobTitle,department,city,state,country')
+    .select('id,displayName,mail,jobTitle,department,city,state,country')
     .get();
 
   // exclude the current user, since this is not supported in Graph, we need to

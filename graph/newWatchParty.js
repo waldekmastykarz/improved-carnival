@@ -5,13 +5,13 @@ import graphClient from './graphClient.js';
 export async function createNewEvent() {
   // Get the user's input
   const subject = document.getElementById('ev-subject').value;
-  const attendees = document.getElementById('ev-attendees').value;
+  const attendees = document.querySelector('#newWatchParty mgt-people-picker').selectedPeople;
   const start = document.getElementById('ev-start').value;
   const end = document.getElementById('ev-end').value;
   const body = document.getElementById('ev-body').value;
 
   // Build the JSON payload of the event
-  let newEvent = {
+  const newEvent = {
     subject: subject,
     start: {
       dateTime: start,
@@ -27,19 +27,14 @@ export async function createNewEvent() {
   };
 
   if (attendees) {
-    const attendeeArray = attendees.split(';');
-    newEvent.attendees = [];
-
-    for (const attendee of attendeeArray) {
-      if (attendee.length > 0) {
-        newEvent.attendees.push({
-          type: 'required',
-          emailAddress: {
-            address: attendee
-          }
-        });
-      }
-    }
+    newEvent.attendees = attendees.map(attendee => {
+      return {
+        type: 'required',
+        emailAddress: {
+          address: attendee.mail
+        }
+      };
+    });
   }
 
   if (body) {

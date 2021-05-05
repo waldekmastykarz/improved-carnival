@@ -2,7 +2,6 @@ import { getMyUpcomingMeetings } from '../graph/events.js';
 import { getSelectedUserId, getUser } from '../graph/user.js';
 
 export async function loadMeetings() {
-
     document.querySelector('#events .loading').style = 'display: block';
     document.querySelector('#events .noContent').style = 'display: none';
     document.querySelector('#events mgt-agenda').events = [];

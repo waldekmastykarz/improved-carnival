@@ -1,4 +1,5 @@
 import { createNewEvent } from '../graph/newWatchParty.js';
+import { loadMeetings } from './events.js';
 
 export function loadWatchPartyForm() {
   const newWatchParty = document.getElementById('newWatchParty');
@@ -14,7 +15,10 @@ export function getWatchPartyForm() {
     .querySelectorAll('.ms-Grid, .createButton, .cancelButton')
     .forEach(e => e.style = 'display: block');
   newWatchParty.querySelector('.button').style = 'display: none';
-  newWatchParty.querySelector('.createButton').addEventListener('click', createNewEvent);
+  newWatchParty.querySelector('.createButton').addEventListener('click', async function() {
+    await createNewEvent();
+    await loadMeetings();
+  });
   newWatchParty.querySelector('.cancelButton').addEventListener('click', refresh);
 }
 
