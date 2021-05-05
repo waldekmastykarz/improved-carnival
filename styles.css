@@ -34,6 +34,7 @@ ul {
   margin: 0 10px 14px 0;
   padding: 14px;
 }
+
 .date {
   font-size: 13px;
   font-weight: bold;
@@ -47,8 +48,8 @@ ul {
 .location {
   font-size: 12px;
 }
-.location a{
 
+.location a {
   text-decoration: none;
 }
 
@@ -58,6 +59,7 @@ ul {
   min-width: 180px;
   padding: 10px 5px;
 }
+
 .online-meeting {
   font-size: 10px;
   margin-top: 8px;
@@ -81,8 +83,7 @@ ul {
   display: inline-block;
 }
 
-
-.subject{
+.subject {
   font-size: 14px;
 }
 
@@ -97,7 +98,9 @@ ul {
   border-bottom: 5px solid #10296d;
 }
 
-.about{ margin-top:15px;}
+.about {
+  margin-top: 15px;
+}
 
 .card mgt-person {
   position: relative;
@@ -108,7 +111,7 @@ ul {
   --avatar-border-radius: 50%;
 }
 
-.button,.createButton, .cancelButton {
+.button, .createButton, .cancelButton {
   background-color: #ac6faa;
   border: none;
   color: #10296d;
@@ -125,18 +128,16 @@ ul {
 
 }
 
-
 .button:disabled {
   background-color: #aaa;
   color: #555;
 }
 
-
-.attendee{
+.attendee {
   padding-right:2px;
 }
 
-.attendee img{
+.attendee img {
   width: 30px;
   height: 30px;
   -webkit-border-radius: 50%;
@@ -177,12 +178,10 @@ label{
  border-top: transparent;
  outline: none;
  background-color: transparent;
- padding: 20px, 2px;
+ padding: 20px 2px;
  
 }
 
 .input:focus{
   border-bottom: 3px solid #ac6faa;
-  
 }
-
