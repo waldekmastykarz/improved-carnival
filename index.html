@@ -85,14 +85,16 @@
         <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg4">
           <div id="newWatchParty">
             <button class="button">ORGANIZE A WATCH PARTY 📺</button>
-            <div class="ms-Grid ">
+            <div class="ms-Grid">
               <h2>Let's create a watch party!🎉</h2>
-              <div class="ms-Grid-row eventForm">
+              <div class="ms-Grid-row">
                 <div class="ms-Grid-col ms-sm6 ms-md10 ms-lg10">
                   <label>Subject</label>
                   <input id="ev-subject" class="input" type="text"></input>
                   <label>Attendees</label>
-                  <mgt-people-picker></mgt-people-picker>
+                  <div class="attendeesDiv">
+                    <mgt-people-picker class="custom-class"></mgt-people-picker>
+                  </div>
                   <div class="ms-Grid">
                     <div class="ms-Grid-row">
                       <div class="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
