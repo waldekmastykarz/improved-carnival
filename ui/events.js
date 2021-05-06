@@ -1,25 +1,28 @@
 import { getMyUpcomingMeetings } from '../graph/events.js';
-import { getSelectedUserId, getUser } from '../graph/user.js';
 
 export async function loadMeetings() {
-    document.querySelector('#events .loading').style = 'display: block';
-    document.querySelector('#events .noContent').style = 'display: none';
-    document.querySelector('#events mgt-agenda').events = [];
+    const eventsContainer = document.getElementById('events');
+    eventsContainer.querySelector('.loading').style = 'display: block';
+    eventsContainer.querySelector('.noContent').style = 'display: none';
+    eventsContainer.querySelector('mgt-agenda').events = [];
+    eventsContainer.querySelector('h2').innerHTML = 'Upcoming watch parties';
 
-    const selectedUserId = getSelectedUserId();
-    if (!selectedUserId) {
-        document.querySelector('#events h2').innerHTML = 'Upcoming watch parties';
-    } else {
-        let selectedUser = await getUser(selectedUserId);
-        document.querySelector('#events h2').innerHTML = `Upcoming watch parties`;
-    }
+    const events = await getMyUpcomingMeetings();
+    events.forEach(meeting => {
+        meeting.attendees = meeting.attendees.map(a => {
+            return {
+                displayName: a.emailAddress.name,
+                mail: a.emailAddress.address,
+                personImage: a.personImage
+            };
+        });
+    });
 
-    const myMeetings = await getMyUpcomingMeetings(selectedUserId);
-    document.querySelector('#events mgt-agenda').events = myMeetings;
-    document.querySelector('#events .loading').style = 'display: none';
+    eventsContainer.querySelector('mgt-agenda').events = events;
+    eventsContainer.querySelector('.loading').style = 'display: none';
 
-    if (myMeetings.length === 0) {
-        document.querySelector('#events .noContent').style = 'display: block';
+    if (events.length === 0) {
+        eventsContainer.querySelector('.noContent').style = 'display: block';
         return;
     }
 }
@@ -27,7 +30,6 @@ export async function loadMeetings() {
 // Function to format the meeting time - needs to be global for access from
 // the MGT template in index.html
 window.timeRangeFromEvent = function (event) {
-
     if (event.isAllDay) {
         return 'ALL DAY';
     }

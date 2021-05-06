@@ -22,7 +22,7 @@ export async function getMyColleagues() {
 
   // get colleagues' photos
   const colleaguesPhotosRequests = colleagues.value.map(
-    colleague => getUserPhoto(colleague.id));
+    colleague => getUserPhoto(colleague.mail));
   const colleaguesPhotos = await Promise.allSettled(colleaguesPhotosRequests);
   colleagues.value.forEach((colleague, i) => {
     if (colleaguesPhotos[i].status === 'fulfilled') {
