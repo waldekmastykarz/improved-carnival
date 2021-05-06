@@ -1,26 +1,28 @@
 import { getUpcomingGames } from '../graph/games.js';
-import { getSelectedUserId, getUser } from '../graph/user.js';
 
 export async function loadGames() {
+    const gamesContainer = document.getElementById('games');
+    gamesContainer.querySelector('.loading').style = 'display: block';
+    gamesContainer.querySelector('.noContent').style = 'display: none';
+    gamesContainer.querySelector('mgt-agenda').events = [];
+    gamesContainer.querySelector('h2').innerHTML = 'Upcoming NBA games';
 
-    document.querySelector('#games .loading').style = 'display: block';
-    document.querySelector('#games .noContent').style = 'display: none';
-    document.querySelector('#games mgt-agenda').events = [];
+    const games = await getUpcomingGames();
+    games.forEach(meeting => {
+        meeting.attendees = meeting.attendees.map(a => {
+            return {
+                displayName: a.emailAddress.name,
+                mail: a.emailAddress.address,
+                personImage: a.personImage
+            };
+        });
+    });
 
-    const selectedUserId = getSelectedUserId();
-    if (!selectedUserId) {
-        document.querySelector('#games h2').innerHTML = 'Upcoming NBA games';
-    } else {
-        let selectedUser = await getUser(selectedUserId);
-        document.querySelector('#games h2').innerHTML = `Upcoming NBA games`;
-    }
+    gamesContainer.querySelector('mgt-agenda').events = games;
+    gamesContainer.querySelector('.loading').style = 'display: none';
 
-    const myMeetings = await getUpcomingGames(selectedUserId);
-    document.querySelector('#games mgt-agenda').events = myMeetings;
-    document.querySelector('#games .loading').style = 'display: none';
-
-    if (myMeetings.length === 0) {
-        document.querySelector('#games .noContent').style = 'display: block';
+    if (games.length === 0) {
+        gamesContainer.querySelector('.noContent').style = 'display: block';
         return;
     }
 }
