@@ -172,16 +172,35 @@ label{
  width: 100%;
  height: max-content;
  margin-bottom: 10px;
- border-bottom: 3px solid #10296D;
+ /* border-bottom: 3px solid #10296D;
  border-left: transparent;
  border-right: transparent;
- border-top: transparent;
+ border-top: transparent; */
  outline: none;
- background-color: transparent;
- padding: 20px 2px;
+ /* background-color: transparent;  */
+ border: 3px solid #10296D;
+ padding: 10px 2px;
  
 }
 
 .input:focus{
-  border-bottom: 3px solid #ac6faa;
+  /* border-bottom: 3px solid #ac6faa; */
+  border: 3px solid #ac6faa;
 }
+
+.attendeesDiv {
+ width: 100%;
+ height: max-content;
+ margin-bottom: 10px;
+ background-color: transparent;
+ /* padding: 12px 2px; */
+}
+
+
+.attendeesDiv mgt-people-picker.custom-class {
+  
+  --input-border: 3px solid #10296D;
+  
+  --input-border-color--focus:#ac6faa;
+}
+
